@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <% if (!user){ %>
-      <nav>
-          <button><a href="/auth/google">Log in with Google</a></button>
-    <%} else{ %>
-      <button><a href="/logout">Sign Out</a></button>
-    <% } %>
-      </nav>
+<%- include('./partials/nav.ejs') %>
+  <div class="splash-container">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
+  </div>
+</body>
 </html>

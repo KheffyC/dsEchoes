@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 20px;
+  font: 14px "Playfair Bold";
+  background-color: black;
+  color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: #545a5d;
+  text-decoration: none;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.splash-container, .groups-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
