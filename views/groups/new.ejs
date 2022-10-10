@@ -1,14 +1,10 @@
 <%- include('../partials/nav.ejs') %>
-<div>
+<div class="splash-container">
     <h1><%= title %></h1>
     <h3>Want to start a new group? What should we call it!</h3>
+    <form id="new-form" action="/groups" method="POST">
+        <label>Group Name</label>
+        <input type="text" name="title">
+        <button type="submit">Lets get started!</button>
+    </form>
 </div>
-<form id="new-form" action="/groups" method="POST">
-    <label>Group Name</label>
-    <input type="text" name="title">
-    <label>Member Invites</label>
-    <select name="users">
-        <option></option>
-    </select>
-    <button type="submit">Lets get started!</button>
-</form>

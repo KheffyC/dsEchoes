@@ -3,6 +3,10 @@
     <h1><%= title %></h1>
     <p>
         <h2>Choose your group</h2>
+        <% groups.map(group => { %>
+            <div class="group-box"><%= group.title %></div>
+        <% }) %>
         <button> <a href="/groups/new">New Group</a></button>
     </p>
+
 </div>
