@@ -1,0 +1,26 @@
+<%- include('../partials/nav.ejs') %>
+<div class="show-container">
+    <div class="column-one">
+        <!-- Add info bar that shows createdBy and who created it -->
+        <!-- <p>Created By: <%= group.user.name %></p> -->
+    </div>
+    <div class="column-two">
+        <div class="main-feed">
+            <h2><%= group.title %></h2>
+            <% group.posts.map(p => { %>
+                <div class="post-container">
+                    <p><img src="<%=p.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"></span><%= p.userName %></p>
+                    <div><%= p.content %></div>
+                </div>
+            <% }) %>
+        </div>
+        <form id="new-post" action="/groups/<%= group._id %>/posts" method="POST">
+            <textarea name="content"></textarea>
+            <input type="submit" value="Add Post">
+        </form>
+    </div>
+    <div class="column-three">
+       <h2>Online</h2> 
+    </div>
+</div>
+<%- include('../partials/footer') %>

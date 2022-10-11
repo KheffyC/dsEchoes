@@ -7,5 +7,6 @@ const group = require('../models/group');
 router.get('/', isLoggedIn ,groupsCtrl.index)
 router.get('/new', isLoggedIn, groupsCtrl.new)
 router.post('/', groupsCtrl.create)
+router.get('/:id', groupsCtrl.show)
 
 module.exports = router;

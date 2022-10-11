@@ -1,12 +1,13 @@
 <%- include('../partials/nav.ejs') %>
 <div class="groups-container">
-    <h1><%= title %></h1>
+    <h1>Welcome, <%= user.name %>!</h1>
     <p>
         <h2>Choose your group</h2>
         <% groups.map(group => { %>
-            <div class="group-box"><%= group.title %></div>
+            <div class="group-box"><a href="/groups/<%= group._id %>"><%= group.title %></a></div>
         <% }) %>
         <button> <a href="/groups/new">New Group</a></button>
     </p>
 
 </div>
+<%- include('../partials/footer') %>
