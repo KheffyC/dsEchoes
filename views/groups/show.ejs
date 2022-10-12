@@ -35,7 +35,21 @@
 
                                 <% p.comments.map(comment => { %>
                                     <div class="reply-container">
-                                        <%= comment.content %>
+                                        <img src="<%= comment.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
+                                        <div class="reply-info">
+                                            <div class="reply-user">
+                                                <div class="reply-title">
+                                                    <div><%= comment.userName %></div>
+                                                    <div class="reply-edit"></div>
+                                                    <% if (user && user._id.equals(comment.user)) { %>
+                                                        <form action="/groups/<%= group._id %>/posts/<%= p._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                                            <input class="delete-post" type="submit" value="x"> 
+                                                        </form>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <%= comment.content %>
+                                        </div>
                                     </div>
                                     <% }) %>
                             <% } else { %>

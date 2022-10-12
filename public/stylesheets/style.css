@@ -79,7 +79,7 @@ footer{
   justify-items: flex-start;
 }
 
-.post-container{
+.post-container, .reply-container{
   display: flex;
   border-bottom: 1px solid gray;
   height: fit-content;
@@ -90,31 +90,31 @@ footer{
   justify-content: stretch;
 }
 
-.post-container img {
+.post-container img{
   height: 50px;
   border-radius: 100%;
   margin-right: 10px;
 }
 
-.post-info{
+.post-info, .reply-info{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.post-user{
+.post-user, .reply-info{
   width: 100%;
   color: white;
   font-weight: bold;
 }
 
-.post-edit{
+.post-edit, .reply-edit{
   display: flex;
   margin-right: 10px;
 }
 
-.post-title{
+.post-title, .reply-title{
   display: flex;
   margin: 10px;
   justify-content: space-between;
