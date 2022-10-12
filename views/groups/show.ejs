@@ -3,17 +3,28 @@
     <div class="column-one">
         <!-- Add info bar that shows createdBy and who created it -->
         <!-- <p>Created By: <%= group.user.name %></p> -->
+        <h2>Groups</h2>
+        <ul class="group-list">
+            <% const otherGroups = groups.filter(g => g.title !== group.title ) %>
+        <% otherGroups.map(g => { %>
+            <li><a href="/groups/<%= g._id%>"><%= g.title %></a></li>
+        <% }) %>
+        </ul>
     </div>
     <div class="column-two">
         <h2><%= group.title %></h2>
         <div class="main-feed">
+            <% if (!group.posts.length) { %>
+                <img class="empty-feed" src="/images/darkSky.png" referrerpolicy="no-referrer">
+            <% } else {%>
             <% group.posts.map(p => { %>
                 <div class="post-container">
                     <img src="<%=p.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
                     <div class="post-info">
                         <div class="post-user">
                             <div class="post-title">
-                                <div><%= p.userName %></div>
+                                <% let time = p.createdAt.toTimeString() %>
+                                <div><%= p.userName %> - <span><%= time %></span></div>
                                 <div class="post-edit">
                                     <% if (user && user._id.equals(p.user)) { %>
                                         <a class="edit-button" href="/groups/<%= group._id %>/posts/<%= p._id %>/edit">Edit</a>&nbsp;
@@ -25,9 +36,9 @@
                             </div>
                         </div>
                         <div class="post-content"><%= p.content %></div>
-                        <div>
-                            <form action="/groups/<%= group._id %>/posts/<%= p._id %>/comments" method="post">
-                                <input type="text" placeholder="Reply in thread" name="content"><span><input type=submit value="Reply!" ></span>
+                        <div> 
+                            <form class="reply-form" action="/groups/<%= group._id %>/posts/<%= p._id %>/comments" method="post">
+                                <input type="text" placeholder="comment" name="content" autocomplete="off">
                             </form>
                         </div>
                         <div>
@@ -52,14 +63,13 @@
                                         </div>
                                     </div>
                                     <% }) %>
-                            <% } else { %>
-                                <p>No Replies to this post</p>
                             <% } %>
                         </div>
                     </div>
                 </div>
                 <br>
             <% }) %>
+            <% } %>
         </div>
         <form id="new-post" action="/groups/<%= group._id %>/posts" method="POST">
             <textarea name="content" rows="1" cols="50" wrap="hard"></textarea>
@@ -68,6 +78,16 @@
     </div>
     <div class="column-three">
        <h2>Online</h2> 
+       <% if(users.length){ %>
+        <ul>
+            <% users.map(user => { %>
+                <li>
+                    <img src="<%= user.avatar %>">
+                    <%= user.name %>
+                </li>
+            <% }) %>
+        </ul>
+       <%}%>
     </div>
 </div>
 <%- include('../partials/footer') %>

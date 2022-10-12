@@ -1,6 +1,8 @@
 body {
   font: 14px "Playfair Bold";
-  background-color: black;
+  background-image: url('../images/deepanshu-arora-N9xfJ5wRUzw-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   display: flex;
   flex-direction: column;
@@ -8,8 +10,27 @@ body {
 }
 
 a {
-  color: #545a5d;
+  color: white;
   text-decoration: none;
+}
+
+.groups-container{
+  text-align: center;
+
+}
+
+.groups-container > .new-group{
+  border: 2px solid white;
+  background-color: inherit;
+  font-size: large;
+  font-weight: bold;
+  padding: 30px;
+  width: 23%;
+}
+
+.groups-container button span{
+  margin-right: 10px;
+  font-size: x-large;
 }
 
 .navbar{
@@ -17,7 +38,6 @@ a {
   padding: 5px;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(34, 32, 32);
 }
 
 .splash-container, .groups-container{
@@ -28,14 +48,23 @@ a {
   align-items: center;
 }
 
-.group-box{
-  padding: 30px;
+.group-list-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 25px;
   border: 2px solid white;
+}
+
+.group-box, .group-box-joined, .group-list-container{
   width: 20%;
-  text-align: center;
-  font-size: large;
+  font-size: x-large;
   font-weight: bold;
   margin-bottom: 15px;
+}
+
+.join-box{
+  background-color: green;
 }
 
 footer{
@@ -53,11 +82,51 @@ footer{
 }
 
 .column-one{
-  width: 15%
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.group-list{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.group-list li{
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  border-bottom: 2px solid grey;
+  width: 80%;
+}
+
+.group-list li:hover{
+  color: rgb(74, 74, 180);
+  cursor: pointer;
+}
+
+.column-three ul li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.column-three ul li img{
+  height: 50px;
+  border-radius: 50%;
 }
 
 .column-three{
-  width: 15%
+  width: 15%;
+}
+
+.column-one, .column-three, .column-two{
+  margin-left: 5px;
 }
 
 .column-two{
@@ -65,8 +134,18 @@ footer{
   display: flex;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
+  padding-left: 5px;
   flex-direction: column;
   height: 90vh
+}
+
+.empty-feed{
+  height: 60vh;
+  opacity: .6;
+  border-style: none;
+  background-color: inherit;
+  align-items: center;
+  margin-left: 300px;
 }
 
 .main-feed{
@@ -77,6 +156,22 @@ footer{
   align-items: flex-start;
   justify-content: stretch;
   justify-items: flex-start;
+  overflow: scroll;
+}
+
+.reply-form > input{
+  background-color: inherit;
+  color: white;
+  width: 80vh;
+  height: 2.5vh;
+  border-style: none;
+  margin: 0px 10px 10px;
+
+}
+
+::placeholder{
+  color: white;
+  opacity: .8;
 }
 
 .post-container, .reply-container{
@@ -101,6 +196,8 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 6px;
+
 }
 
 .post-user, .reply-info{
@@ -120,8 +217,14 @@ footer{
   justify-content: space-between;
 }
 
+.post-title span{
+  opacity: .7;
+  color: gray;
+}
+
 .post-content{
   margin: 10px;
+  border-bottom: 1px solid gray;
 }
 
 .delete-post, .edit-button{
@@ -134,11 +237,16 @@ footer{
   cursor: pointer;
 }
 
+.reply{
+  cursor: pointer;
+}
+
 #new-post{
   display: flex;
   height: 10vh;
   width: 100%;
   margin-left: 10%;
+  margin-top: 10px;
   justify-content: stretch;
   justify-items: center;
   align-items: center;
@@ -151,11 +259,12 @@ footer{
 
 #new-post textarea, .edit-content{
   width: 80%;
-  height: 50%;
+  height: 7vh;
   resize: none;
-  font-size: 16px;
+  font: 18px "Playfair Bold";
   box-sizing: border-box;
   border-radius: 15px;
   border: 2px solid #ccc;
-  background-color: rgb(105, 104, 104);
+  background-image: url('../images/deepanshu-arora-N9xfJ5wRUzw-unsplash.jpg');
+  color: white
 }

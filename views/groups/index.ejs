@@ -4,9 +4,18 @@
     <p>
         <h2>Choose your group</h2>
         <% groups.map(group => { %>
-            <div class="group-box"><a href="/groups/<%= group._id %>"><%= group.title %></a></div>
+            <div class="group-list-container">
+                <% if (!group.user._id.equals(userId)){ %>
+                    <h3 class="group-box"><%= group.title %></h3>
+                    <form action="/groups/<%= group._id %>" method="POST">
+                        <button class="join-box">JOIN</button>
+                    </form>
+                <% } else { %>        
+                    <h3 class="group-box-joined"><a href="/groups/<%= group._id %>"><%= group.title %></a></h3>
+                <% } %>
+            </div>
         <% }) %>
-        <button> <a href="/groups/new">New Group</a></button>
+        <button class="new-group"> <a href="/groups/new"><span>+</span>New Group</a></button>
     </p>
 
 </div>

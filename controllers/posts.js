@@ -12,11 +12,12 @@ async function create(req, res){
     let group = await Group.findById(req.params.groupid).populate('user');
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
+    req.body.userAvatar = req.user.avatar; 
     group.posts.push(req.body)
     group.save(function(err) {
-            res.redirect(`/groups/${group.id}`)
-        })
+        let time = group.post.createdAt.getTime()
+        res.redirect(`/groups/${group.id}`, {time})
+    })
 }
 
 async function edit(req, res){
