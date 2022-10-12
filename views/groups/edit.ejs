@@ -1,0 +1,7 @@
+<%- include('../partials/nav') %>
+<form action="/groups/<%= group._id %>/posts/<%= post._id %>?_method=PUT" method="POST">
+    <!-- Value attribute is being set to the comment's current text -->
+    <textarea class="edit-content" name="content" value="<%= post.content %>"><%= post.content %></textarea>
+    <button type="submit">UPDATE COMMENT</button>
+</form>
+<%- include('../partials/footer') %>

@@ -5,17 +5,50 @@
         <!-- <p>Created By: <%= group.user.name %></p> -->
     </div>
     <div class="column-two">
+        <h2><%= group.title %></h2>
         <div class="main-feed">
-            <h2><%= group.title %></h2>
             <% group.posts.map(p => { %>
                 <div class="post-container">
-                    <p><img src="<%=p.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"></span><%= p.userName %></p>
-                    <div><%= p.content %></div>
+                    <img src="<%=p.userAvatar %>" alt="avatar" referrerpolicy="no-referrer">
+                    <div class="post-info">
+                        <div class="post-user">
+                            <div class="post-title">
+                                <div><%= p.userName %></div>
+                                <div class="post-edit">
+                                    <% if (user && user._id.equals(p.user)) { %>
+                                        <a class="edit-button" href="/groups/<%= group._id %>/posts/<%= p._id %>/edit">Edit</a>&nbsp;
+                                        <form action="/groups/<%= group._id %>/posts/<%= p._id %>?_method=DELETE" method="POST">
+                                            <input class="delete-post" type="submit" value="Delete"> 
+                                        </form>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-content"><%= p.content %></div>
+                        <div>
+                            <form action="/groups/<%= group._id %>/posts/<%= p._id %>/comments" method="post">
+                                <input type="text" placeholder="Reply in thread" name="content"><span><input type=submit value="Reply!" ></span>
+                            </form>
+                        </div>
+                        <div>
+                            <% if (p.comments.length){ %>
+
+                                <% p.comments.map(comment => { %>
+                                    <div class="reply-container">
+                                        <%= comment.content %>
+                                    </div>
+                                    <% }) %>
+                            <% } else { %>
+                                <p>No Replies to this post</p>
+                            <% } %>
+                        </div>
+                    </div>
                 </div>
+                <br>
             <% }) %>
         </div>
         <form id="new-post" action="/groups/<%= group._id %>/posts" method="POST">
-            <textarea name="content"></textarea>
+            <textarea name="content" rows="1" cols="50" wrap="hard"></textarea>
             <input type="submit" value="Add Post">
         </form>
     </div>

@@ -72,26 +72,90 @@ footer{
 .main-feed{
   flex-grow: 1;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  justify-items: flex-start;
 }
 
 .post-container{
-  border: 2px solid red;
+  display: flex;
+  border-bottom: 1px solid gray;
+  height: fit-content;
+  width: 95%;
   text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  justify-content: stretch;
 }
 
-.post-container p img {
-  height: 30px
+.post-container img {
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.post-info{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-user{
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.post-edit{
+  display: flex;
+  margin-right: 10px;
+}
+
+.post-title{
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}
+
+.post-content{
+  margin: 10px;
+}
+
+.delete-post, .edit-button{
+  border: none;
+  background-color: #000;
+  color: white;
+  padding: 2px 5px;
+  text-decoration: none;
+  margin: 1px 1px;
+  cursor: pointer;
 }
 
 #new-post{
   display: flex;
   height: 10vh;
+  width: 100%;
+  margin-left: 10%;
   justify-content: stretch;
   justify-items: center;
-  align-items: stretch;
+  align-items: center;
   text-align: center;
 }
 
-#new-post textarea{
-  width: 80%
+#new-post input{
+  height: 30%
+}
+
+#new-post textarea, .edit-content{
+  width: 80%;
+  height: 50%;
+  resize: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  background-color: rgb(105, 104, 104);
 }

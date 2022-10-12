@@ -2,11 +2,10 @@ const express = require('express')
 const router = express.Router();
 const isLoggedIn = require('../config/auth')
 const groupsCtrl = require('../controllers/groups');
-const group = require('../models/group');
 
 router.get('/', isLoggedIn ,groupsCtrl.index)
 router.get('/new', isLoggedIn, groupsCtrl.new)
-router.post('/', groupsCtrl.create)
-router.get('/:id', groupsCtrl.show)
+router.post('/',isLoggedIn, groupsCtrl.create)
+router.get('/:id', isLoggedIn, groupsCtrl.show)
 
 module.exports = router;
