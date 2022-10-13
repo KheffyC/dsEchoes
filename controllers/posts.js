@@ -15,8 +15,7 @@ async function create(req, res){
     req.body.userAvatar = req.user.avatar; 
     group.posts.push(req.body)
     group.save(function(err) {
-        let time = group.post.createdAt.getTime()
-        res.redirect(`/groups/${group.id}`, {time})
+        res.redirect(`/groups/${group.id}`)
     })
 }
 

@@ -1,12 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+
 body {
-  font: 14px "Playfair Bold";
-  background-image: url('../images/deepanshu-arora-N9xfJ5wRUzw-unsplash.jpg');
+  font-family: 'Bebas Neue', cursive;
+  background-image: url('../images/stars.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.about-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page > div{
+  width: 50%;
+  padding: 20px;
+  font-size: x-large;
+  color: rgb(166, 166, 166);
 }
 
 a {
@@ -33,19 +49,59 @@ a {
   font-size: x-large;
 }
 
+.navbar-title{
+  display: flex;
+  text-align: end;
+}
+
+.navbar-title img{
+  margin: 0px 20px;
+}
+
 .navbar{
   display: flex;
+  font-family: 'Black Ops One', cursive;
   padding: 5px;
   justify-content: space-between;
   align-items: center;
 }
 
+.new-container{
+  margin-bottom: 100px;
+}
+
+.new-container h1{
+  font-size: xx-large;
+
+}
+
+
 .splash-container, .groups-container{
+  background-image: url('../images/starTrail.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: space-between;
   align-items: center;
+}
+
+.splash-container button{
+  background-color: black;
+  width: 30%;
+  height: 6vh;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.splash-container button a{
+  font-size: x-large;
+}
+
+.splash-container button img{
+  height: inherit;
+  width: 2vh;
 }
 
 .group-list-container{
@@ -165,7 +221,7 @@ footer{
   border-style: none;
   background-color: inherit;
   align-items: center;
-  margin-left: 400px;
+  margin-left: 350px;
 }
 
 .main-feed{
@@ -191,7 +247,7 @@ footer{
 
 ::placeholder{
   color: white;
-  opacity: .8;
+  opacity: .6;
 }
 
 .post-container, .reply-container{
@@ -285,6 +341,6 @@ footer{
   box-sizing: border-box;
   border-radius: 15px;
   border: 2px solid #ccc;
-  background-image: url('../images/deepanshu-arora-N9xfJ5wRUzw-unsplash.jpg');
+  background-image: url('../images/stars.jpg');
   color: white
 }

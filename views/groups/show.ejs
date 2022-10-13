@@ -38,7 +38,7 @@
                         <div class="post-content"><%= p.content %></div>
                         <div> 
                             <form class="reply-form" action="/groups/<%= group._id %>/posts/<%= p._id %>/comments" method="post">
-                                <input type="text" placeholder="comment" name="content" autocomplete="off">
+                                <input type="text" placeholder="reply to this post" name="content" autocomplete="off">
                             </form>
                         </div>
                         <div>

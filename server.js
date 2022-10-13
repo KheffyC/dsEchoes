@@ -14,6 +14,7 @@ require('./config/passport')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var aboutRouter = require('./routes/about')
 var groupsRouter = require('./routes/groups');
 var postsRouter = require('./routes/posts')
 var commentsRouter = require('./routes/comments')
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/about', aboutRouter)
 app.use('/groups', groupsRouter);
 app.use('/', postsRouter)
 app.use('/', commentsRouter)
