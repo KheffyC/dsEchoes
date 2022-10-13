@@ -5,13 +5,13 @@
         <h2>Choose your group</h2>
         <% groups.map(group => { %>
             <div class="group-list-container">
-                <% if (!group.user._id.equals(userId)){ %>
+                <% if (!group){ %>
                     <h3 class="group-box"><%= group.title %></h3>
                     <form action="/groups/<%= group._id %>" method="POST">
                         <button class="join-box">JOIN</button>
                     </form>
                 <% } else { %>        
-                    <h3 class="group-box-joined"><a href="/groups/<%= group._id %>"><%= group.title %></a></h3>
+                    <h3 class="group-box-joined"><a href="/groups/<%= group._id %>"><%= group.title%></a></h3>
                 <% } %>
             </div>
         <% }) %>

@@ -63,8 +63,13 @@ a {
   margin-bottom: 15px;
 }
 
+.group-box-joined :hover{
+  color: purple;
+}
+
 .join-box{
   background-color: green;
+  cursor: pointer;
 }
 
 footer{
@@ -122,7 +127,22 @@ footer{
 }
 
 .column-three{
+  display: flex;
+  flex-direction: column;
   width: 15%;
+}
+
+.column-three form{
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
+.column-three form button{
+  background-color: rgb(166, 15, 15);
+}
+
+.online-users{
+  flex-grow: 1;
 }
 
 .column-one, .column-three, .column-two{
@@ -145,7 +165,7 @@ footer{
   border-style: none;
   background-color: inherit;
   align-items: center;
-  margin-left: 300px;
+  margin-left: 400px;
 }
 
 .main-feed{

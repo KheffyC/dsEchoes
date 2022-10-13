@@ -24,7 +24,7 @@ const groupSchema = new Schema({
     title: {type: String, required: true},
     posts: [postSchema],
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
-    users: [{type:Schema.Types.ObjectId, ref: 'User'}]
+    users: [{type: Schema.Types.ObjectId, ref: 'User', required: true}],
 }, {
     timestamps: true
 })

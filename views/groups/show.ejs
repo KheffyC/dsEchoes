@@ -79,7 +79,7 @@
     <div class="column-three">
        <h2>Online</h2> 
        <% if(users.length){ %>
-        <ul>
+        <ul class="online-users">
             <% users.map(user => { %>
                 <li>
                     <img src="<%= user.avatar %>">
@@ -88,6 +88,9 @@
             <% }) %>
         </ul>
        <%}%>
+       <% if (user && user._id.equals(group.user._id)){ %>
+            <form action="/groups/<%= group._id%>?_method=DELETE" method="POST"><button type="submit">DELETE GROUP</button></form>
+        <% } %>   
     </div>
 </div>
 <%- include('../partials/footer') %>
