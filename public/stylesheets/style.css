@@ -68,11 +68,29 @@ a {
 
 .new-container{
   margin-bottom: 100px;
+  background-image: url('../images/starTrail.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
 }
 
 .new-container h1{
   font-size: xx-large;
+}
 
+.new-button{
+  color: white;
+  background-color: black;
+}
+
+.new-button:hover{
+  background-color: green;
+  border-style: ridge;
 }
 
 
@@ -88,12 +106,14 @@ a {
   align-items: center;
 }
 
+
 .splash-container button{
   background-color: black;
   width: 30%;
   height: 6vh;
   font-family: 'Bebas Neue', cursive;
 }
+
 
 .splash-container button a{
   font-size: x-large;
@@ -330,7 +350,11 @@ footer{
 }
 
 #new-post input{
-  height: 30%
+  height: 50%;
+  background-color: black;
+  color: white;
+  border-style:outset;
+  margin-left: 10px;
 }
 
 #new-post textarea, .edit-content{

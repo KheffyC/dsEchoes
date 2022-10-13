@@ -1,11 +1,11 @@
 <%- include('../partials/nav.ejs') %>
-<div class="splash-container new-container">
+<div class="new-container">
     <h1><%= title %></h1>
     <h3>Want to start a new group? What should we call it!</h3>
     <form id="new-form" action="/groups" method="POST">
         <label>Group Name</label>
         <input type="text" name="title">
-        <button type="submit">Lets get started!</button>
+        <button class="new-button"type="submit">Lets get started!</button>
     </form>
 </div>
 <%- include('../partials/footer') %>
