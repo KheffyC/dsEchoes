@@ -20,7 +20,7 @@ Post, reply, and edit any of your own posts!
 ## Getting Started
 Click on the link below to get started: 
 
-https://dsechoes.onrender.com
+https://dsechoes.herokuapp.com
 
 ***
 ## Technologies Used
